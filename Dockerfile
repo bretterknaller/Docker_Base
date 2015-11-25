@@ -11,4 +11,4 @@ ADD supervisord.conf /etc/supervisor/conf.d/
 VOLUME ["/data"]
 
 ### Start Supervisor
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/python /usr/bin/supervisord -n"]
