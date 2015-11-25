@@ -5,7 +5,7 @@ RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold" &&
 RUN apt-get install -y supervisor
 RUN mkdir /data
 ### Configure Supervisor
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ADD supervisord.conf /etc/supervisor/conf.d/
 
 ### Volume
 VOLUME ["/data"]
