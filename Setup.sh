@@ -12,6 +12,7 @@ case "$status" in
 	echo "(1) Pyload"
 	
 	read -p "Bitte Nummer angeben:" Software
+}
 	
 Add () {
 
@@ -26,7 +27,9 @@ case "$Software" in
 4) #xbmc-nightly 
 ;; 	
 esac
-cp -rf $USERDIR/patch_Git/* $HOMEDIR/Git/tdt 2>/dev/null
+}
+
+
 echo "<<<<------------------Docker_Setup------------------>>>>"	
 echo "<<<<------------------------------------------------------>>>>"
 echo "(1) Setup"
@@ -36,3 +39,5 @@ echo "(3) Multi Bauen"
 echo "(4) Flash erstellen"
 echo "(5) Git/NHD2 up/downgraden"
 echo "<<<<------------------------------------------------------>>>>"
+
+exit
