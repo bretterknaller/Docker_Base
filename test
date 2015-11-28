@@ -1,0 +1,4 @@
+test () {
+echo "das ist das Echo"
+}
+test
