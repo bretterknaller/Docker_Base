@@ -1,0 +1,11 @@
+# get syncthing
+ADD https://github.com/syncthing/syncthing/releases/download/v0.12.5/syncthing-linux-amd64-v0.12.5.tar.gz /app/syncthing.tar.gz
+WORKDIR /app
+RUN tar -xzvf syncthing.tar.gz \
+  && rm -f syncthing.tar.gz \
+  && mv syncthing-linux-amd64-v* syncthing \
+  && chown -R abc:users syncthing 
+  
+ADD echo "[program:syncthing]" >> /etc/supervisor/conf.d/supervisord.conf
+ADD echo "command=syncthing -home=/config -no-browser -no-restart --gui-address="0.0.0.0:8384" >> /etc/supervisor/conf.d/supervisord.conf
+ADD echo "user=abc" >> /etc/supervisor/conf.d/supervisord.conf

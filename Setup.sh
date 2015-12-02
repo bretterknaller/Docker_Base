@@ -3,12 +3,12 @@ Software () {
 # aselect1
 select auswahl in \
 Pyload \
-Bla \
+Syncthing \
 exit
 do
 case $auswahl in 
 Pyload) cat ./set_pyload >> ./Dockerfile ;;
-Bla) echo "bla" ;;
+Syncthing) cat ./set_syncthing >> ./Dockerfile ;;
 exit) exit ;;
 esac
 done
