@@ -9,14 +9,7 @@ RUN echo "deb http://shell.ninthgate.se/packages/debian wheezy main" > /etc/apt/
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/*
 
-#Supervisor
-ADD echo "[program:plex]" >> /etc/supervisor/conf.d/supervisord.conf
-ADD echo "command=/usr/sbin/start_pms" >> /etc/supervisor/conf.d/supervisord.conf
-ADD echo "environment=HOME="/config"" >> /etc/supervisor/conf.d/supervisord.conf
-ADD echo "stdout_logfile=/config/logs/supervisor/%(program_name)s.log" >> /etc/supervisor/conf.d/supervisord.conf
-ADD echo "stderr_logfile=/config/logs/supervisor/%(program_name)s.log" >> /etc/supervisor/conf.d/supervisord.conf
-ADD echo "autostart=true" >> /etc/supervisor/conf.d/supervisord.conf
-ADD echo "autorestart=true" >> /etc/supervisor/conf.d/supervisord.conf
+
 
 #Mappings and ports
 VOLUME ["/config", "/transcode"]

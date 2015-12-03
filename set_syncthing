@@ -5,7 +5,4 @@ RUN tar -xzvf syncthing.tar.gz \
   && rm -f syncthing.tar.gz \
   && mv syncthing-linux-amd64-v* syncthing \
   && chown -R abc:users syncthing 
-  
-ADD echo "[program:syncthing]" >> /etc/supervisor/conf.d/supervisord.conf
-ADD echo "command=syncthing -home=/config -no-browser -no-restart --gui-address="0.0.0.0:8384" >> /etc/supervisor/conf.d/supervisord.conf
-ADD echo "user=abc" >> /etc/supervisor/conf.d/supervisord.conf
+ADD supervisor/syncthing.conf /etc/supervisor/conf.d

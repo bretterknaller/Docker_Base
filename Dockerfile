@@ -14,7 +14,7 @@ RUN mkdir -p \
 /defaults
 
 ### Configure Supervisor
-ADD supervisord.conf /etc/supervisor/conf.d/
+ADD supervisor/supervisord.conf /etc/supervisor/conf.d/
 
 ### Volume
 VOLUME ["/data"]

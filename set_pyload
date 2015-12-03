@@ -6,6 +6,3 @@ RUN git clone https://github.com/pyload/pyload.git /opt/pyload
 ADD pyload /opt/.pyload
 ### Supervisor
 
-ADD echo "[program:pyload]" >> /etc/supervisor/conf.d/supervisord.conf
-ADD echo "command=python /opt/pyload/pyLoadCore.py --configdir=/opt/.pyload --daemon" >> /etc/supervisor/conf.d/supervisord.conf
-ADD echo "user=abc" >> /etc/supervisor/conf.d/supervisord.conf
